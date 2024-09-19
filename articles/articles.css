@@ -143,8 +143,7 @@ p.release-date{
 
 .related-articles {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-    gap: 20px; /* Jarak antara item grid */
+    grid-template-columns: repeat(2, 1fr);  
     max-width: 1200px;
     margin: 0 auto;
 }
