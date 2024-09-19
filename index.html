@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fashionNews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+      <input type="checkbox" name="" id="check">
+      <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+      <h1 class="logo">HOME</h1>
+      <nav>
+          <a href="/index.html">Home</a>
+          <a href="/fashionNews/fashionNews.html">News</a>
+          <a href="#">Trends</a>
+          <a href="#">Shops</a>
+      </nav>
+      <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
+          <i class="fas fa-user"></i> Sign In
+      </a>
+  </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Lifestyle Hub</h1>
+            <p>Inspirasi terbaik untuk hidup sehat dan gaya terkini.</p>
+            <button>Read More</button>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured">
+        <h2>Trend</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Fashion">
+                <h3>Trend 1</h3>
+                <p>Tren terbaru untuk musim ini yang wajib kamu coba!</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Health">
+                <h3>Trend 2</h3>
+                <p>Tips menjaga kesehatan mental dan fisik di masa pandemi.</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Travel">
+                <h3>Trend 3</h3>
+                <p>Rekomendasi destinasi liburan untuk memulihkan semangat.</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/300" alt="Food">
+                <h3>Trend 4</h3>
+                <p>Cicipi resep makanan sehat yang mudah dibuat di rumah.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lastest news -->
+    <section class="latest-news">
+        <h2>News</h2>
+        <div class="news-articles">
+            <div class="news-article">
+                <img src="/images/articles/art1.jpeg" alt="Best Front Row Style From New York Fashion Week">
+                <h3><a href="/articles/art1.html">Best Front Row Style From New York Fashion Week</a></h3>
+                <h4>By Christian Allaire</h4>
+            </div>
+            <div class="news-article">
+              <img src="/images/articles/art2.jpg" alt="My (Brief) Life as a Show Dog for Rachel Antonoff and Susan Alexandra">
+              <h3><a href="/articles/art1.html">My (Brief) Life as a Show Dog for Rachel Antonoff and Susan Alexandra</a></h3>
+              <h4>By Magnolia</h4>
+            </div>
+            <div class="news-article">
+              <img src="/images/articles/art3.jpg" alt="Ouch, My Back! The Worst Trend at NYFW Is the Backless Benches">
+              <h3>Ouch, My Back! The Worst Trend at NYFW Is the Backless Benches</h3>
+              <h4>By Christian Allaire</h4>
+            </div>
+            <div class="news-article">
+              <img src="/images/articles/art4.jpg" alt="All Aboard the U.S.S. SNL for Tommy Hilfiger">
+              <h3>All Aboard the U.S.S. SNL for Tommy Hilfiger</h3>
+              <h4>By Hannah Jackson</h4>
+            </div>
+        </div>
+    </section>  
+    
+    <!-- Shop -->
+    <section class="shop">
+        <h2>Shop</h2>
+        <div class="news-shops">
+            <div class="news-shop">
+                <img src="https://via.placeholder.com/400x200" alt="News 1">
+                <h3>Shop 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="news-shop">
+                <img src="https://via.placeholder.com/400x200" alt="News 2">
+                <h3>Shop 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="news-shop">
+                <img src="https://via.placeholder.com/400x200" alt="News 3">
+                <h3>Shop 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="news-shop">
+                <img src="https://via.placeholder.com/400x200" alt="News 4">
+                <h3>Shop 4</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Berlangganan Artikel Terbaru</h2>
+        <p>Dapatkan update terbaru langsung ke emailmu!</p>
+        <form id="newsletterForm">
+            <input type="email" id="email" placeholder="Masukkan email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Lifestyle Website. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
