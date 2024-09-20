@@ -96,6 +96,12 @@ nav a:hover::after {
     opacity: 1;
 }
 
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
