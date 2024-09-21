@@ -112,7 +112,6 @@ nav a:hover::after {
 
 .container {
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -132,7 +131,7 @@ nav a:hover::after {
 
 .news-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Elevation on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .news-item img {
@@ -154,7 +153,7 @@ nav a:hover::after {
 }
 
 .news-item h3 a:hover {
-    color: #ff4081; /* Fashion accent color */
+    color: #ff4081; 
 }
 
 .news-item h4 {
@@ -193,11 +192,11 @@ nav a:hover::after {
         padding: 10px;
         margin-top: 30px;
         font-size: 20px;
-        border-bottom: 1px solid #ccc; /* Add a bottom border */
+        border-bottom: 1px solid #ccc; 
     }
 
     header nav a:last-child {
-        border-bottom: none; /* Remove the border from the last item */
+        border-bottom: none; 
     }
 
     header nav a:hover {
