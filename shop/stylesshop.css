@@ -41,6 +41,7 @@ header {
 
 h2 {
     text-align: center;
+    padding: 20px;
 }
 
 .logo {
@@ -115,6 +116,25 @@ nav a:hover::after {
     left: 0;
     opacity: 1;
 }
+
+.filter-section {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-section label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.filter-section select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 
 /* Shop Section */
 .products {
