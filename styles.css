@@ -62,7 +62,7 @@ nav a::after {
     background-color: #ff4081; 
     bottom: -5px;
     left: 0;
-    transition: width 0.3s ease; 
+    transition: width var(--transition-speed) ease; 
 }
 
 nav a.active::after, 
@@ -79,7 +79,7 @@ nav a:hover::after {
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background var(--transition-speed) ease;
 }
 
 #sign-up-btn:hover {
@@ -126,7 +126,7 @@ nav a:hover::after {
     background-color: #d12b2b;
 }
 
-/* Featured Articles */
+/* Trend */
 .featured {
     padding: 60px 20px;
     text-align: center;
@@ -169,6 +169,16 @@ nav a:hover::after {
 .article h3 {
     font-size: 1.8rem;
     margin: 15px 10px;
+}
+
+.article h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed) ease;
+}
+
+.article h3 a:hover {
+    color: #ff4081;
 }
 
 .article p {
@@ -236,7 +246,7 @@ nav a:hover::after {
 .news-article h3 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 .news-article h3 a:hover {
@@ -298,7 +308,7 @@ nav a:hover::after {
 .hero1 button a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 /* Newsletter Section */
@@ -394,7 +404,7 @@ footer .social-media a:hover {
         width: 100%;
         background-color: #f3f3f3;
         padding: 20px;
-        transition: .3s ease;
+        transition: var(--transition-speed) ease;
         opacity: 0;
     }
 
@@ -404,11 +414,11 @@ footer .social-media a:hover {
         padding: 10px;
         margin-top: 30px;
         font-size: 20px;
-        border-bottom: 1px solid #ccc; /* Add a bottom border */
+        border-bottom: 1px solid #ccc;
     }
 
     header nav a:last-child {
-        border-bottom: none; /* Remove the border from the last item */
+        border-bottom: none;
     }
 
     header nav a:hover {
