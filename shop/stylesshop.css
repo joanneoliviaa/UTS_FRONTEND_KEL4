@@ -139,8 +139,8 @@ nav a:hover::after {
 /* Shop Section */
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3-column grid */
-    gap: 20px; /* Space between grid items */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
     padding: 0 50px;
 }
 
@@ -214,13 +214,13 @@ footer .social-media a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* 2-column grid for smaller screens */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media (max-width: 480px) {
     .products {
-        grid-template-columns: 1fr; /* 1-column grid for mobile */
+        grid-template-columns: 1fr;
     }
 }
 
