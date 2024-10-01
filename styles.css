@@ -111,21 +111,6 @@ nav a:hover::after {
     margin-bottom: 20px;
 }
 
-.hero button {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color var(--transition-speed) ease;
-}
-
-.hero button:hover {
-    background-color: #d12b2b;
-}
-
 /* Trend */
 .featured {
     padding: 60px 20px;
