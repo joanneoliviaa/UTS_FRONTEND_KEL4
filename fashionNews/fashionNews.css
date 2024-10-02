@@ -33,7 +33,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -41,12 +41,11 @@ header {
     font-weight: bolder;
 }
 
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #000;
-    letter-spacing: 2px;
-}
+.logo img {
+    height: 40px; 
+    width: 140px; 
+    display: block; 
+  }
 
 nav a {
     margin: 0 15px;
@@ -62,7 +61,7 @@ nav a::after {
     position: absolute;
     width: 0; 
     height: 2px;
-    background-color: #ff4081; 
+    background-color: #725b36; 
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease; 
@@ -104,6 +103,59 @@ nav a:hover::after {
     opacity: 1;
 }
 
+/* Tombol utama */
+.sort-container {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-button {
+    background-color: #725b36;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sort-button:hover {
+    background-color: #2c1d04;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(59, 41, 2, 0.423);
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s ease-in-out;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.sort-container:hover .dropdown-content {
+    display: block;
+}
+
 
 .news-section {
     padding: 50px 0;
@@ -115,6 +167,7 @@ nav a:hover::after {
 }
 
 .grid-container {
+    padding-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
@@ -170,6 +223,49 @@ nav a:hover::after {
     opacity: 1;
 }
 
+/* Styling untuk container countdown */
+#countdown {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 50px auto;
+    text-align: center;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#countdown h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #e74c3c; /* Warna merah muda untuk kesan menarik */
+}
+
+#timer span {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#countdown p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #666;
+    margin-top: 15px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header nav {
@@ -213,6 +309,19 @@ nav a:hover::after {
 
     label {
         display: block;
+    }
+
+    #countdown {
+        width: 100%;
+    }
+
+    #timer {
+        font-size: 32px;
+    }
+
+    #timer span {
+        margin: 0 5px;
+        padding: 8px 15px;
     }
 }
 

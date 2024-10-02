@@ -10,11 +10,15 @@
 </head>
 <body>
 
-     <!-- Header Section -->
-     <header>
+    <!-- Header Section -->
+    <header>
         <input type="checkbox" name="" id="check">
         <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-        <h1 class="logo">NEWS</h1>
+        <h1 class="logo">
+          <a href="/index.html">
+              <img src="/images/malika.jpg" alt="logo">
+          </a>
+        </h1>
         <nav>
             <a href="/index.html">Home</a>
             <a href="/fashionNews/fashionNews.html">News</a>
@@ -24,10 +28,19 @@
         <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
             <i class="fas fa-user"></i> Sign In
         </a>
-    </header>
+      </header>
 
     <section class="news-section">
         <div class="container">
+            <!-- Dropdown untuk Sort By -->
+            <div class="sort-container">
+                <button class="sort-button">Sort By Title</button>
+                <div class="dropdown-content">
+                    <a href="#" id="sort-asc">Ascending</a>
+                    <a href="#" id="sort-desc">Descending</a>
+                </div>
+            </div>
+
             <div class="grid-container">
                 <article class="news-item">
                     <img src="/images/articles/art1.jpeg" alt="Best Front Row Style From New York Fashion Week">
@@ -41,22 +54,50 @@
                 </article>
                 <article class="news-item">
                     <img src="/images/articles/art3.jpg" alt="Ouch, My Back! The Worst Trend at NYFW Is the Backless Benches">
-                    <h3><a href="/articles/art3.html"> My Back! The Worst Trend at NYFW Is the Backless Benches</a></h3>
+                    <h3><a href="/articles/art3.html">Ouch, My Back! The Worst Trend at NYFW Is the Backless Benches</a></h3>
                     <h4>By Christian Allaire</h4>
                 </article>
-                    <article class="news-item">
-                        <img src="/images/articles/art4.jpg" alt="All Aboard the U.S.S. SNL for Tommy Hilfiger">
-                        <h3>All Aboard the U.S.S. SNL for Tommy Hilfiger</h3>
-                        <h4>By Hannah Jackson</h4>
+                <article class="news-item">
+                    <img src="/images/articles/art4.jpg" alt="All Aboard the U.S.S. SNL for Tommy Hilfiger">
+                    <h3><a href="/articles/art4.html">All Aboard the U.S.S. SNL for Tommy Hilfiger</a></h3>
+                    <h4>By Hannah Jackson</h4>
+                </article>
+                <article class="news-item">
+                    <img src="/images/articles/art5.jpg" alt="How Editors, Models and More Styled Their White Tees at the Fashion for Our Future March">
+                    <h3><a href="/articles/art5.html">How Editors, Models and More Styled Their White Tees at the Fashion for Our Future March</a></h3>
+                    <h4>By Leah Faye Cooper</h4>
+                </article>
+                <article class="news-item">
+                    <img src="/images/articles/art6.jpg" alt="Reiss launches collaboration with Les 100 Ciels">
+                    <h3><a href="/articles/art6.html">Reiss launches collaboration with Les 100 Ciels</a></h3>
+                    <h4>By Danielle Wightman-Stone</h4>
+                </article>
+                <article class="news-item">
+                    <img src="/images/articles/art7.jpg" alt="Trendstop Spring Summer 2025 Milan Fashion Week Overview">
+                    <h3><a href="/articles/art7.html">Trendstop Spring Summer 2025 Milan Fashion Week Overview</a></h3>
+                    <h4>By Trendstop</h4>
+                </article>    
+                <article class="news-item">
+                    <img src="/images/articles/art9.jpg" alt="WGSN's Lisa White talks consumer and business trends in 2026, the year of reorientation">
+                    <h3><a href="/articles/art9.html">WGSN's Lisa White Talks Consumer And Business Trends in 2026, The Year of Reorientation</a></h3>
+                    <h4>By Florence Julienne</h4>    
                     </article>
                     <article class="news-item">
-                        <img src="/images/articles/art5.jpg" alt="How Editors, Models and More Styled Their White Tees at the Fashion for Our Future March">
-                        <h3>How Editors, Models and More Styled Their White Tees at the Fashion for Our Future March</h3>
-                        <h4>By Leah Faye Cooper</h4>
-                    </article>
+                        <img src="/images/articles/art10.jpg" alt="Fashion industry unveils financing scheme for cotton decarbonisation">
+                        <h3><a href="/articles/art10.html">Fashion Industry Unveils Financing Scheme For Cotton Decarbonisation</a></h3>
+                        <h4>By Don-Alvin Adegeest</h4>
+                        </article>
+                        <article class="news-item">
+                            <img src="/images/articles/art11.jpg" alt="Alzheimer's socks: Dutch designer draws attention to the disease">
+                            <h3><a href="/articles/art11.html">Alzheimer's Socks: Dutch Designer Draws Attention to The Disease</a></h3>
+                            <h4>By Caitlyn Terra</h4>
+                            </article>  
+                        <article class="news-item">
+                            <img src="/images/articles/art12.jpg" alt="Levi’s teases collaboration with Beyoncé">
+                            <h3><a href="/articles/art12.html">Levi’s Teases Collaboration With Beyoncé</a></h3>
+                            <h4>By Rachel Douglass</h4>
             </div>
         </div>
-    </section>
 
     <footer>
         <p>&copy; 2024 Lifestyle Website. All rights reserved.</p>
@@ -66,6 +107,75 @@
             <a href="#">Twitter</a>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('sort-asc').addEventListener('click', function(event){
+            event.preventDefault(); 
+            sortItems('asc');
+        });
+
+        document.getElementById('sort-desc').addEventListener('click', function(event){
+            event.preventDefault(); 
+            sortItems('desc');
+        });
+
+        function sortItems(order) {
+            var container = document.querySelector('.grid-container');
+            var items = Array.from(container.getElementsByClassName('news-item'));
+
+            items.sort(function(a, b) {
+                var titleA = a.querySelector('h3').innerText.toLowerCase();
+                var titleB = b.querySelector('h3').innerText.toLowerCase();
+
+                if (order === 'asc') {
+                    return titleA.localeCompare(titleB); 
+                } else {
+                    return titleB.localeCompare(titleA); 
+                }
+            });
+
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+
+            items.forEach(function(item) {
+                container.appendChild(item);
+            });
+        }
+    </script>
+    <script>
+    window.onload = function() {
+        var currentPath = window.location.pathname;
+        var navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(function(link) {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+    }
+    </script>
     
+    <script>
+        var eventDate = new Date("Dec 31, 2024 12:00:00").getTime();
+    
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var timeLeft = eventDate - now;
+    
+            var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " +
+                minutes + "m " + seconds + "s ";
+    
+            if (timeLeft < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("timer").innerHTML = "Event has started!";
+            }
+        }, 1000);
+    </script>    
 </body>
 </html>

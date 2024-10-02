@@ -11,25 +11,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <input type="checkbox" name="" id="check">
-        <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-        <h1 class="logo">
-            <a href="/index.html">
-                <img src="/images/malika.jpg" alt="logo">
-            </a>
-        </h1>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/fashionNews/fashionNews.html">News</a>
-            <a href="/trends/trends.html">Trends</a>
-            <a href="/shop/indexshop.html">Shops</a>
-        </nav>
-        <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
-            <i class="fas fa-user"></i> Sign In
-        </a>
-    </header>
+   <!-- Header Section -->
+   <header>
+    <input type="checkbox" name="" id="check">
+    <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+    <h1 class="logo">
+      <a href="/index.html">
+          <img src="/images/malika.jpg" alt="logo">
+      </a>
+    </h1>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/fashionNews/fashionNews.html">News</a>
+        <a href="/trends/trends.html">Trends</a>
+        <a href="/shop/indexshop.html">Shops</a>
+    </nav>
+    <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
+        <i class="fas fa-user"></i> Sign In
+    </a>
+  </header>
 
     <div class="container">
         <h2>Stay Inspired</h2>
@@ -90,31 +90,45 @@
     <script>
         
         document.getElementById('search-btn').addEventListener('click', function() {
-            
-            const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const gridItems = document.querySelectorAll('.grid-item');
-            
-            gridItems.forEach(item => {
-                item.style.display = 'none';
-            });
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const gridItems = document.querySelectorAll('.grid-item');
 
-            gridItems.forEach(item => {
-                const category = item.getAttribute('data-category').toLowerCase();
-                if (category.includes(searchInput)) {
-                    item.style.display = 'block'; 
+        gridItems.forEach(item => {
+            item.style.display = 'none';
+        });
+
+        gridItems.forEach(item => {
+         const category = item.getAttribute('data-category').toLowerCase();
+         const title = item.querySelector('h3').textContent.toLowerCase();
+            const description = item.querySelector('p').textContent.toLowerCase();
+
+            if (category.includes(searchInput) || title.includes(searchInput) || description.includes(searchInput)) {
+                item.style.display = 'block'; 
+            }
+        });
+
+        if (!Array.from(gridItems).some(item => item.style.display === 'block')) {
+            alert('No trends found for "' + searchInput + '". Please try again.');
+        }
+    });
+    
+    document.getElementById('search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('search-btn').click(); 
+        }
+    });
+    </script>
+    <script>
+        window.onload = function() {
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('nav a');
+    
+            navLinks.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
                 }
             });
-
-            if (!Array.from(gridItems).some(item => item.style.display === 'block')) {
-                alert('No trends found for "' + searchInput + '". Please try again.');
-            }
-        });
-
-        document.getElementById('search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('search-btn').click(); 
-            }
-        });
-    </script>
+        }
+        </script>
 </body>
 </html>

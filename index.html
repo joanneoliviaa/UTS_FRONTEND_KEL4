@@ -30,13 +30,56 @@
       </a>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to MALIKA Fashion Style</h1>
-            <p>Best Inspirations for a Healthy Life and Current Trends.</p>
+        <!-- Left and right controls -->
+        <div class="slider">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="/images/hero/hero1.jpg" alt="Slide 1">
+                <div class="hero-content">
+                    <h1>Welcome to MALIKA Fashion Style</h1>
+                    <p>Best Inspirations for a Healthy Life and Current Trends.</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="/images/hero/hero2.jpg" alt="Slide 2">
+                <div class="hero-content">
+                    <h1>Discover the Latest Trends</h1>
+                    <p>Stay ahead with the hottest fashion.</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="/images/hero/hero3.png" alt="Slide 3">
+                <div class="hero-content">
+                    <h1>Exclusive Collection Just For You</h1>
+                    <p>Shop now and upgrade your wardrobe.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Left and right controls -->
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    
+        <!-- Pagination Dots -->
+        <div class="pagination-dots">
+            <span class="dot active-dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </section>
+    
+    
+        <!-- Pagination Dots -->
+        <div class="pagination-dots">
+            <span class="dot active-dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+    
 
     <!--Trend -->
     <section class="featured">
@@ -67,7 +110,7 @@
 
     <!-- Lastest news -->
     <section class="latest-news">
-        <h2>News</h2>
+        <h2>NEWS SECTION</SECtion></h2>
         <div class="news-articles">
             <div class="news-article">
                 <img src="/images/articles/art1.jpeg" alt="Best Front Row Style From New York Fashion Week">
@@ -86,7 +129,7 @@
             </div>
             <div class="news-article">
               <img src="/images/articles/art4.jpg" alt="All Aboard the U.S.S. SNL for Tommy Hilfiger">
-              <h3>All Aboard the U.S.S. SNL for Tommy Hilfiger</h3>
+              <h3><a href="/articles/art3.html">All Aboard the U.S.S. SNL for Tommy Hilfiger</a></h3>
               <h4>By Hannah Jackson</h4>
             </div>
         </div>
@@ -100,6 +143,7 @@
             <button><a href="/shop/indexshop.html">Shop</a></button>
         </div>
     </section>
+    
 
     <!-- Newsletter Section -->
     <section class="newsletter">
@@ -122,5 +166,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('nav a');
+    
+            navLinks.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        </script>
 </body>
 </html>

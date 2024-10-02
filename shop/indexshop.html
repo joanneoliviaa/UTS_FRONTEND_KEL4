@@ -9,21 +9,25 @@
     <link rel="stylesheet" href="stylesshop.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <input type="checkbox" name="" id="check">
-        <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
-        <h1 class="logo">SHOP</h1>
-        <nav>
-            <a href="/index.html">Home</a>
-            <a href="/fashionNews/fashionNews.html">News</a>
-            <a href="/trends/trends.html">Trends</a>
-            <a href="/shop/indexshop.html">Shops</a>
-        </nav>
-        <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
-            <i class="fas fa-user"></i> Sign In
-        </a>
-    </header>
+   <!-- Header Section -->
+   <header>
+    <input type="checkbox" name="" id="check">
+    <label for="check" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+    <h1 class="logo">
+      <a href="/index.html">
+          <img src="/images/malika.jpg" alt="logo">
+      </a>
+    </h1>
+    <nav>
+        <a href="/index.html">Home</a>
+        <a href="/fashionNews/fashionNews.html">News</a>
+        <a href="/trends/trends.html">Trends</a>
+        <a href="/shop/indexshop.html">Shops</a>
+    </nav>
+    <a href="/SignIn/signIn.html" class="btn" id="sign-up-btn">
+        <i class="fas fa-user"></i> Sign In
+    </a>
+  </header>
 
 <!-- Shop Section -->
 <section id="shop" class="shop">
@@ -150,5 +154,17 @@
     </footer>
 
     <script src="scriptshop.js"></script>
+    <script>
+        window.onload = function() {
+            var currentPath = window.location.pathname;
+            var navLinks = document.querySelectorAll('nav a');
+    
+            navLinks.forEach(function(link) {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        </script>
 </body>
 </html>
