@@ -81,23 +81,25 @@
                     <img src="/images/articles/art9.jpg" alt="WGSN's Lisa White talks consumer and business trends in 2026, the year of reorientation">
                     <h3><a href="/articles/art9.html">WGSN's Lisa White Talks Consumer And Business Trends in 2026, The Year of Reorientation</a></h3>
                     <h4>By Florence Julienne</h4>    
-                    </article>
-                    <article class="news-item">
-                        <img src="/images/articles/art10.jpg" alt="Fashion industry unveils financing scheme for cotton decarbonisation">
-                        <h3><a href="/articles/art10.html">Fashion Industry Unveils Financing Scheme For Cotton Decarbonisation</a></h3>
-                        <h4>By Don-Alvin Adegeest</h4>
-                        </article>
-                        <article class="news-item">
-                            <img src="/images/articles/art11.jpg" alt="Alzheimer's socks: Dutch designer draws attention to the disease">
-                            <h3><a href="/articles/art11.html">Alzheimer's Socks: Dutch Designer Draws Attention to The Disease</a></h3>
-                            <h4>By Caitlyn Terra</h4>
-                            </article>  
-                        <article class="news-item">
-                            <img src="/images/articles/art12.jpg" alt="Levi’s teases collaboration with Beyoncé">
-                            <h3><a href="/articles/art12.html">Levi’s Teases Collaboration With Beyoncé</a></h3>
-                            <h4>By Rachel Douglass</h4>
+                </article>
+                <article class="news-item">
+                    <img src="/images/articles/art10.jpg" alt="Fashion industry unveils financing scheme for cotton decarbonisation">
+                    <h3><a href="/articles/art10.html">Fashion Industry Unveils Financing Scheme For Cotton Decarbonisation</a></h3>
+                    <h4>By Don-Alvin Adegeest</h4>
+                </article>
+                <article class="news-item">
+                    <img src="/images/articles/art11.jpg" alt="Alzheimer's socks: Dutch designer draws attention to the disease">
+                    <h3><a href="/articles/art11.html">Alzheimer's Socks: Dutch Designer Draws Attention to The Disease</a></h3>
+                    <h4>By Caitlyn Terra</h4>
+                </article>  
+                <article class="news-item">
+                    <img src="/images/articles/art12.jpg" alt="Levi’s teases collaboration with Beyoncé">
+                    <h3><a href="/articles/art12.html">Levi’s Teases Collaboration With Beyoncé</a></h3>
+                    <h4>By Rachel Douglass</h4>
+                </article>
             </div>
         </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Lifestyle Website. All rights reserved.</p>
@@ -108,74 +110,6 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('sort-asc').addEventListener('click', function(event){
-            event.preventDefault(); 
-            sortItems('asc');
-        });
-
-        document.getElementById('sort-desc').addEventListener('click', function(event){
-            event.preventDefault(); 
-            sortItems('desc');
-        });
-
-        function sortItems(order) {
-            var container = document.querySelector('.grid-container');
-            var items = Array.from(container.getElementsByClassName('news-item'));
-
-            items.sort(function(a, b) {
-                var titleA = a.querySelector('h3').innerText.toLowerCase();
-                var titleB = b.querySelector('h3').innerText.toLowerCase();
-
-                if (order === 'asc') {
-                    return titleA.localeCompare(titleB); 
-                } else {
-                    return titleB.localeCompare(titleA); 
-                }
-            });
-
-            while (container.firstChild) {
-                container.removeChild(container.firstChild);
-            }
-
-            items.forEach(function(item) {
-                container.appendChild(item);
-            });
-        }
-    </script>
-    <script>
-    window.onload = function() {
-        var currentPath = window.location.pathname;
-        var navLinks = document.querySelectorAll('nav a');
-
-        navLinks.forEach(function(link) {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            }
-        });
-    }
-    </script>
-    
-    <script>
-        var eventDate = new Date("Dec 31, 2024 12:00:00").getTime();
-    
-        var countdownFunction = setInterval(function() {
-            var now = new Date().getTime();
-            var timeLeft = eventDate - now;
-    
-            var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h " +
-                minutes + "m " + seconds + "s ";
-    
-            if (timeLeft < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("timer").innerHTML = "Event has started!";
-            }
-        }, 1000);
-    </script>    
+    <script src="fashionNews.js"></script>
 </body>
 </html>

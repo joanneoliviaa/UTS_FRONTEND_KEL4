@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --primary-color: rgb(121, 76, 14);
+    --primary-color: #725b36;
     --secondary-color: #1e1e1e;
     --bg-color: #f9f9f9;
     --text-color: #333;
@@ -9,6 +9,7 @@
     --font-size-base: 1rem;
     --border-radius: 8px;
     --transition-speed: 0.3s;
+    --hover-colour: #ad8d59;
 }
 
 * {
@@ -59,7 +60,7 @@ nav a::after {
     position: absolute;
     width: 0; 
     height: 2px;
-    background-color: #ff4081; 
+    background-color: var(--hover-colour); 
     bottom: -5px;
     left: 0;
     transition: width var(--transition-speed) ease; 
@@ -175,22 +176,22 @@ nav a:hover::after {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5); 
-  }
-  
-  .next {
+}
+
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-  .prev {
+    }
+
+.prev {
     left: 0;
     border-radius: 0 3px 3px 0;
-  }
-  
-  /* Add a hover effect */
-  .prev:hover, .next:hover {
+}
+
+/* Add a hover effect */
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-  }  
+}  
 
 /* Trend */
 .featured {
@@ -202,6 +203,7 @@ nav a:hover::after {
 .featured h2 {
     font-size: 2.8rem;
     text-transform: uppercase;
+    margin-top: 60px;
     margin-bottom: 50px;
     color: var(--heading-color);
 }
@@ -244,7 +246,7 @@ nav a:hover::after {
 }
 
 .article h3 a:hover {
-    color: #ff4081;
+    color: var(--hover-colour);
 }
 
 .article p {
@@ -268,13 +270,15 @@ nav a:hover::after {
 
 .news-articles {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
 }
 
 .news-article {
     width: 23%;
-    margin-bottom: 40px;
+    flex: 0 0 auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: var(--border-radius);
@@ -316,13 +320,46 @@ nav a:hover::after {
 }
 
 .news-article h3 a:hover {
-    color: #ff4081;
+    color: var(--hover-colour);
 }
 
 .news-article h4 {
     font-size: 1em;
     color: #888;
     margin: 0 15px 20px;
+}
+
+.news-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.slider-btn {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn, .next-btn {
+    position: static;
+    margin: 0 10px;
+}
+
+.prev-btn {
+    order: -1;
 }
 
 /* Shop Section */
@@ -337,6 +374,7 @@ nav a:hover::after {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    margin-top: 200px;
     margin-bottom: 75px;
     transition: transform var(--transition-speed) ease;
 }
@@ -368,7 +406,7 @@ nav a:hover::after {
 }
 
 .hero1 button:hover {
-    background-color: #d12b2b;
+    background-color: var(--hover-colour);
 }
 
 .hero1 button a {
@@ -441,7 +479,7 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: var(--primary-color);
+    color: var(--hover-colour);
 }
 
 /*burger bar*/
@@ -505,3 +543,15 @@ footer .social-media a:hover {
     }
 }
 
+/* News Articles */
+@media (max-width: 768px) {
+    .news-article {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-article {
+        width: 90%;
+    }
+}
