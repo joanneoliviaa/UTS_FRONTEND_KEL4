@@ -253,6 +253,27 @@ nav a:hover::after {
     margin-bottom: 25px;
 }
 
+.read-more-container {
+    margin-top: 7px;
+    text-align: center;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease;
+    white-space: nowrap;
+}
+
+.read-more-btn:hover {
+    background-color: var(--hover-colour);
+}
+
 /* Latest News Section */
 .latest-news {
     padding: 60px 20px;
