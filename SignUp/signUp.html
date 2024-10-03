@@ -13,7 +13,6 @@
     <section class="sign-up-container">
         <div class="form-box">
             <h1>Create Account</h1>
-            <form id="signupForm" action="/submit-signup" method="post">
                 <div class="input-group">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" required>
@@ -33,6 +32,8 @@
 
                 <button type="submit"><a href="/SignIn/signIn.html">Sign Up</a></button>
                 <p>Already have an account? <a href="/signIn/signIn.html">Sign in here</a></p>
+
+                <p id="error-message">Passwords do not match</p>
             </form>
         </div>
     </section>
