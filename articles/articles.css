@@ -200,6 +200,29 @@ p.release-date{
     font-size: 0.9em
 }
 
+/* Footer Section */
+footer {
+    padding: 30px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+footer .social-media a:hover {
+    color: var(--hover-colour);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
