@@ -1,14 +1,15 @@
 /* Base Styles */
 :root {
-    --primary-color: #f36;
+    --primary-color: #725b36;
     --secondary-color: #1e1e1e;
     --bg-color: #f9f9f9;
     --text-color: #333;
-    --heading-color: #f36;
+    --heading-color: rgb(121, 76, 14);
     --font-primary: 'Helvetica Neue', sans-serif;
     --font-size-base: 1rem;
     --border-radius: 8px;
     --transition-speed: 0.3s;
+    --hover-colour: #ad8d59;
 }
 
 * {
@@ -89,7 +90,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--hover-colour);
 }
 
 button a {
