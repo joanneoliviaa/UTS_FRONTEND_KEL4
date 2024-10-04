@@ -49,6 +49,7 @@ header {
 h2 {
     text-align: center;
     padding: 20px;
+    font-size: 40px;
 }
 
 nav a {
@@ -214,7 +215,7 @@ footer .social-media a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
 
