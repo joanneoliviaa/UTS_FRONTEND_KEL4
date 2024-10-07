@@ -9,7 +9,9 @@
     --font-size-base: 1rem;
     --border-radius: 8px;
     --transition-speed: 0.3s;
+    --hover-color: #ff4081; /* Added hover color */
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -18,22 +20,23 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    font-size: var(--font-size-base);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:20px 10%;
+    padding: 20px 10%;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     width: 100%;
-    transition: padding 0.3s, box-shadow 0.3s;
+    transition: padding var(--transition-speed), box-shadow var(--transition-speed);
     z-index: 1000;
 }
 
@@ -52,11 +55,11 @@ nav a {
     text-decoration: none;
     color: #555;
     font-size: 1em;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 nav a:hover {
-    color: #ff4081;
+    color: var(--hover-color);
 }
 
 /* Article Section */
@@ -73,35 +76,30 @@ nav a:hover {
 .article-header h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.5em;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
 p {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0 0 16px;
-    color: #333;
+    margin-bottom: 16px;
+    color: var(--text-color);
 }
 
-p.author{
+p.author {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 16px;
     color: #555;
-    margin-bottom: 0px; ;
+    margin-bottom: 0px;
 }
 
-p.release-date{
+p.release-date {
     font-family: 'Playfair Display', serif;
-    font-size: 2px;
-}
-
-.article-header .release-date {
-    font-size: 1.1em;
-    color: #777;
+    font-size: 1em; /* Fixed typo for font-size */
 }
 
 .article-image {
@@ -123,34 +121,31 @@ p.release-date{
     margin: 0 auto;
 }
 
-.article-content p {
-    margin-bottom: 20px;
-}
-
 .article-image figcaption {
-    font-family:  'Roboto', sans-serif;
-    font-size: 0.9em; 
-    color: #777; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    color: #777;
     margin-top: 5px;
 }
 
 /* READ MORE Section */
 .read-more {
     padding: 50px 10%;
-    background-color: #f9f9f9;
+    background-color: var(--bg-color);
     text-align: center;
 }
 
 .read-more h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2em;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 30px;
 }
 
 .related-articles {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -165,7 +160,7 @@ p.release-date{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-speed) ease;
 }
 
 .related-article:hover img {
@@ -181,7 +176,7 @@ p.release-date{
     color: white;
     padding: 20px;
     text-align: left;
-    transition: background 0.3s ease;
+    transition: background var(--transition-speed) ease;
 }
 
 .related-article:hover .article-info {
@@ -197,7 +192,7 @@ p.release-date{
 
 .article-info .author {
     color: #d4c8c8;
-    font-size: 0.9em
+    font-size: 0.9em;
 }
 
 /* Footer Section */
@@ -220,28 +215,69 @@ footer .social-media a {
 }
 
 footer .social-media a:hover {
-    color: var(--hover-colour);
+    color: var(--hover-color);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 15px 5%;
     }
 
     nav {
         margin-top: 15px;
     }
 
-    .article-content {
-        font-size: 1.1em;
+    .article {
+        padding: 120px 5%;
     }
 
     .article-header h1 {
         font-size: 2em;
     }
 
-    .article-image img {
-        width: 100%;
+    .related-articles {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .article-content {
+        font-size: 1em;
+        padding: 15px 15px;
+    }
+
+    .read-more {
+        padding: 30px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .article {
+        padding: 100px 5%;
+    }
+
+    .article-header h1 {
+        font-size: 1.8em;
+    }
+
+    .related-articles {
+        grid-template-columns: 1fr;
+    }
+
+    .read-more h2 {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        padding: 20px 5%;
     }
 }
