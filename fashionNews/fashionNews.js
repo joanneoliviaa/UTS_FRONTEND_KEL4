@@ -33,8 +33,6 @@ function sortItems(order) {
     });
 }
 
-// 
-
 window.onload = function() {
     var currentPath = window.location.pathname;
     var navLinks = document.querySelectorAll('nav a');
@@ -45,25 +43,4 @@ window.onload = function() {
         }
     });
 }
-
-// event
-var eventDate = new Date("Dec 31, 2024 12:00:00").getTime();
-    
-var countdownFunction = setInterval(function() {
-    var now = new Date().getTime();
-    var timeLeft = eventDate - now;
-
-    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("timer").innerHTML = days + "d " + hours + "h " +
-        minutes + "m " + seconds + "s ";
-
-    if (timeLeft < 0) {
-        clearInterval(countdownFunction);
-        document.getElementById("timer").innerHTML = "Event has started!";
-    }
-}, 1000);
 
