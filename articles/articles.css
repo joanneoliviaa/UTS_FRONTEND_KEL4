@@ -99,7 +99,7 @@ p.author {
 
 p.release-date {
     font-family: 'Playfair Display', serif;
-    font-size: 1em; /* Fixed typo for font-size */
+    font-size: 1em; 
 }
 
 .article-image {
